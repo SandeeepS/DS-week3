@@ -54,15 +54,32 @@ class BinarySearchTree{
             }
         }
     }
+
+    //preorder traversal
+    preOrder(root){
+        if(root){
+            console.log(root.value);
+            this.preOrder(root.left);
+            this.preOrder(root.right);
+        }
+    }
+
+    
 }
 
 let bst = new BinarySearchTree();
 console.log(bst.isEmpty());
 bst.insert(10);
 bst.insert(5);
+bst.insert(15);
+bst.insert(3);
+bst.insert(7);
+
 console.log(bst.isEmpty());
-console.log(bst.Search(bst.root,10));
-console.log(bst.Search(bst.root,5));
-console.log(bst.Search(bst.root,30));
-console.log(bst.Search(bst.root,50));
+// console.log(bst.Search(bst.root,10));
+// console.log(bst.Search(bst.root,5));
+// console.log(bst.Search(bst.root,30));
+// console.log(bst.Search(bst.root,50));
+
+bst.preOrder(bst.root);
 
