@@ -55,32 +55,52 @@ class BinarySearchTree{
         }
     }
 
-    //preorder traversal
-    preOrder(root){
-        if(root){
-            console.log(root.value);
-            this.preOrder(root.left);
-            this.preOrder(root.right);
-        }
-    }
+    //  depth first search (DFS)
+                //preorder traversal
+                preOrder(root){
+                    if(root){
+                        console.log(root.value);
+                        this.preOrder(root.left);
+                        this.preOrder(root.right);
+                    }
+                }
 
-     //inorder traversal
-     inOrder(root){
-        if(root){
-            this.inOrder(root.left);
-            console.log(root.value);
-            this.inOrder(root.right);
-        }
-     }
+                //inorder traversal
+                inOrder(root){
+                    if(root){
+                        this.inOrder(root.left);
+                        console.log(root.value);
+                        this.inOrder(root.right);
+                    }
+                }
 
-     //postOrder traversal
-     postOrder(root){
-        if(root){
-            this.postOrder(root.left);
-            this.postOrder(root.right);
-            console.log(root.value);
-        }
-     }
+                //postOrder traversal
+                postOrder(root){
+                    if(root){
+                        this.postOrder(root.left);
+                        this.postOrder(root.right);
+                        console.log(root.value);
+                    }
+                }
+
+    //Breadth first search(BFS)
+                //use the optimised queue implimentation
+                levelOrder(){
+                    const queue = [];
+                    queue.push(this.root);
+                    while(queue.length){
+                        let curr = queue.shift();
+                        console.log(curr.value);
+                        if(curr.left){
+                            queue.push(curr.left);
+                        }
+                        if(curr.right){
+                            queue.push(curr.right);
+                        }
+                    }
+                }  
+                
+
 
 }
 
@@ -103,4 +123,9 @@ console.log("-----------------------------------------------------")
 bst.inOrder(bst.root);
 console.log("-----------------------------------------------------")
 bst.postOrder(bst.root);
+console.log("-----------------------------------------------------")
+console.log("-----------------------------------------------------")
+console.log("-----------------------------------------------------")
+bst.levelOrder();
+
 
