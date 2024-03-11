@@ -73,6 +73,15 @@ class BinarySearchTree{
         }
      }
 
+     //postOrder traversal
+     postOrder(root){
+        if(root){
+            this.postOrder(root.left);
+            this.postOrder(root.right);
+            console.log(root.value);
+        }
+     }
+
 }
 
 let bst = new BinarySearchTree();
@@ -92,4 +101,6 @@ console.log(bst.isEmpty());
 bst.preOrder(bst.root);
 console.log("-----------------------------------------------------")
 bst.inOrder(bst.root);
+console.log("-----------------------------------------------------")
+bst.postOrder(bst.root);
 
