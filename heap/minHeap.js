@@ -1,16 +1,9 @@
 //implimentation of min heap
 
-class Node{
-    constructor(value){
-        this.arr = new Array;
-        this.left = null;
-        this.right = null;
-    }
-}
-
 class MinHeap{
     constructor(){
-        this.root = null
+       this.arr = new Array;
+       this.heapSize = 0;
     }
 
     getParentIndex(i){
@@ -28,7 +21,7 @@ class MinHeap{
 
     swap(i1,i2){
         let temp = this.arr[i1];
-        this.arr[i] = this.arr[i2];
+        this.arr[i1] = this.arr[i2];
         this.arr[i2] = temp;
     }
 
@@ -40,7 +33,6 @@ class MinHeap{
         }
     }
 
-
     push(element){
         this.arr[this.arr.length] = element;
         this.heapifyDown();
@@ -48,9 +40,10 @@ class MinHeap{
     }
 
     print(){
-        console.log(arr);
+        console.log(this.arr);
     }
 }
+
 const heap = new MinHeap();
 heap.push(100);
 heap.push(90);
@@ -58,5 +51,5 @@ heap.push(80);
 heap.push(70);
 heap.push(60);
 heap.push(50);
-
+heap.push(20);
 heap.print();

@@ -50,13 +50,9 @@ heap.push(80);
 heap.push(70);
 heap.push(60);
 heap.push(50);
-
-
-
 heap.print();
-
 heap.push(65);
-
+heap.push(200);
 heap.print();
 
 
