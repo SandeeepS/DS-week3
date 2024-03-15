@@ -56,6 +56,17 @@ class Graph{
         }
     }
 
+    printGraph() {
+        for (let i = 0; i < this.matrix.length; i++) {
+            let row = '';
+            for (let j = 0; j < this.matrix[i].length; j++) {
+                row += this.matrix[i][j] + ' ';
+            }
+            console.log(row);
+        }
+    }
+    
+
     
 }
 
@@ -68,3 +79,5 @@ graph.addEdge(3,4);
 graph.bfs(3);
 console.log("-----------------------------");
 graph.dfs(3)
+console.log("printed graph");
+graph.printGraph();

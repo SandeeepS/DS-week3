@@ -56,6 +56,14 @@ class Graph{
             }
         }
     }
+
+    printGraph() {
+        for (const node in this.list) {
+            // console.log(`${node} -> ${this.list[node].join(' ')}`);
+            console.log(`${node} -> ${[...new Set(this.list[node])].join(' ')}`);
+        }
+    }
+    
 }
 
 let graph = new Graph();
@@ -75,3 +83,7 @@ graph.addEdge(30,35);
 graph.bfs(5);
 console.log("---------------------");
 graph.dfs(5)
+console.log("---------------------");
+
+graph.printGraph();
+
