@@ -25,6 +25,29 @@ class Graph{
 
     }
 
+    removeEdge(vertx1,vertx2){
+        this.list[vertx1].delete(vertx2);
+        this.list[vertx2].delete(vertx1);
+    }
+
+    hasEdge(vertx1 , vertx2){
+        return this.list[vertx1].has(vertx2) && this.list[vertx2].has(vertx1);
+    }
+
+    removeVertx(vertx){
+        if(!this.list[vertx]){
+            return 
+        }
+
+        for(let selectedvertx of this.list[vertx]){
+            this.removeEdge(vertx,selectedvertx);
+
+
+        }
+
+        delete this.list[vertx];
+    }
+
     display(){
         for(let vertx in this.list){
             console.log( vertx + " -> " + [...this.list[vertx]]);
@@ -43,3 +66,5 @@ graph.addVertx("C");
 graph.addEdge("A","B");
 graph.addEdge("B","C");
 graph.display()
+graph.removeVertx("B");
+graph.display();
