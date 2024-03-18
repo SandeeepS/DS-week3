@@ -99,6 +99,15 @@ class BinarySearchTree{
                         }
                     }
                 }  
+
+
+                sumOfNodes(root = this.root){
+                    if(root === null){
+                        return 0;
+                    }
+
+                    return root.value + this.sumOfNodes(root.left) + this.sumOfNodes(root.right);
+                }
                 
 
 
@@ -127,5 +136,6 @@ console.log("-----------------------------------------------------")
 console.log("-----------------------------------------------------")
 console.log("-----------------------------------------------------")
 bst.levelOrder();
+console.log("sum of nodes is : ", bst.sumOfNodes() );
 
 
