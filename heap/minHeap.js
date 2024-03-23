@@ -39,6 +39,19 @@ class MinHeap{
     
     }
 
+    
+    getSmalletValues(value, index = 0) {
+        if (index >= this.arr.length) return; // Base case: end of heap
+    
+        if (this.arr[index] < value) {
+            console.log(this.arr[index]);
+        }
+    
+        // Recursively check left and right children
+        this.getSmalletValues(value, this.getLeftChildIndex(index));
+        this.getSmalletValues(value, this.getRightChildIndex(index));
+    }
+
     print(){
         console.log(this.arr);
     }
