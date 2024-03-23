@@ -50,6 +50,31 @@ class Trie{
         }
           return true;
     }
+
+    
+    //find the words with given prefix
+    findWords(prefix){
+        let output = [];
+        let curr = this.root;
+        for(let i = 0 ; i < prefix.length;i++){
+            if(curr.children[prefix[i]]){
+                curr = curr.children[prefix[i]];
+            }else{
+                return output;
+            }
+        }
+        this.collectWords(curr,prefix,output);
+        return output;
+    }
+
+    collectWords(node,prefix,output){
+        if(node.isWordEnd){
+            output.push(prefix);
+        }
+        for(let char in node.children){
+            this.collectWords(node.children[char],prefix+char,output)
+        }
+    }
 }
 
 let trie = new Trie();
