@@ -70,7 +70,6 @@ heap.push(50);
 heap.push(100);
 heap.push(90);
 heap.push(80);
-
 heap.print();
 heap.push(65);
 heap.push(200);

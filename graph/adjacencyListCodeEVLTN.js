@@ -42,7 +42,6 @@ class Graph{
         for(let selectedvertx of this.list[vertx]){
             this.removeEdge(vertx,selectedvertx);
 
-
         }
 
         delete this.list[vertx];
