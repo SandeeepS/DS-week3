@@ -12,4 +12,3 @@ function countOne(arr){
     return count;
 }
 
-console.log(countOne(arr));

@@ -22,7 +22,6 @@ class Trie{
             }
             curr = curr.children[charToInsert]
         }
-
         curr.isWordEnd = true;
     }
 
