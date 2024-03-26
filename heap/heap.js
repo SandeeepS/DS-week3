@@ -72,8 +72,7 @@ heap.push(90);
 heap.push(80);
 heap.print();
 heap.push(65);
-heap.push(200);
-heap.print();
+
 heap.delete();
 heap.print();
 
